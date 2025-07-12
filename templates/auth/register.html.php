@@ -1,5 +1,5 @@
 
-    <div class="bg-black border-2 border-gray-700 rounded-lg p-8 w-full max-w-md">
+    <div class="bg-black border-2 border-gray-700 rounded-lg p-8 w-full max-w-6xl shadow-lg shadow-orange-500/50">
         <!-- Header -->
         <div class="text-center mb-8">
             <h1 class="text-3xl font-bold text-white">
@@ -8,12 +8,12 @@
         </div>
 
         <!-- Form -->
-        <form class="space-y-6">
+        <form class="space-y-6 text-white" action="/register" method="post">
             <!-- Row 1: Nom complet et Adresse -->
             <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label class="block text-white text-sm font-medium mb-2">
-                        Nom complet <span class="text-red-500">*</span>
+                        Nom  <span class="text-red-500">*</span>
                     </label>
                     <input 
                         type="text" 
@@ -21,20 +21,6 @@
                         class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     />
                 </div>
-                <div>
-                    <label class="block text-white text-sm font-medium mb-2">
-                        Adresse <span class="text-red-500">*</span>
-                    </label>
-                    <input 
-                        type="text" 
-                        placeholder="Votre adresse"
-                        class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                    />
-                </div>
-            </div>
-
-            <!-- Row 2: Prénom et Téléphone -->
-            <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label class="block text-white text-sm font-medium mb-2">
                         Prénom <span class="text-red-500">*</span>
@@ -45,9 +31,23 @@
                         class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     />
                 </div>
+            </div>
+
+            <!-- Row 2: Prénom et Téléphone -->
+            <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label class="block text-white text-sm font-medium mb-2">
-                        Numéro de téléphone
+                        Adresse <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        placeholder="Votre adresse"
+                        class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    />
+                </div>
+                <div>
+                    <label class="block text-white text-sm font-medium mb-2">
+                        login <span class="text-red-500">*</span>
                     </label>
                     <input 
                         type="tel" 
@@ -58,14 +58,24 @@
             </div>
 
             <!-- Row 3: Numéros de carte d'identité -->
-            <div class=" grid-cols-2 gap-4">
-                <div class="w-[100%]">
-                    <label class="w-[-70%] text-white text-sm font-medium mb-2">
+            <div class=" flex gap-4 flex-colum">
+                <div class="w-[123%]">
+                    <label class="w-[-50%] flex flex-colum text-white text-sm font-medium mb-2">
                         Numéro carte d'identité national<span class="text-red-500">*</span>
                     </label>
                     <input 
                         type="text" 
                         placeholder="1234567890987654"
+                        class="w-[100%] px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    />
+                </div>
+                <div class="w-[123%]">
+                    <label class="w-[-50%] flex flex-colum text-white text-sm font-medium mb-2">
+                        password <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                        type="tel" 
+                        placeholder="+221 XXX XX XX"
                         class="w-[100%] px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     />
                 </div>

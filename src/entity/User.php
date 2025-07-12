@@ -12,13 +12,13 @@ class User extends AbstractEntity {
     private string $adresse;
     private string $login;
     private string $password;
-    private int $nin;
+    private string $nin;
     private string $photoRecto;
     private string $photoVerso;
     private Role $role;
     private array $comptes = [];
 
-    public function __construct(int $id=0, string $prenom='', string $nom='', string $adresse='', string $login='', string $password='', int $nin='', string $photoRecto='', string $photoVerso='')
+    public function __construct(int $id=0, string $prenom='', string $nom='', string $adresse='', string $login='', string $password='', string $nin='', string $photoRecto='', string $photoVerso='')
     {
         $this->id = $id;
         $this->prenom = $prenom;
@@ -43,6 +43,7 @@ class User extends AbstractEntity {
         $user->setPhotoRecto($array['photo_recto'] ?? '');
         $user->setPhotoVerso($array['photo_verso'] ?? '');
         $user->getRole()->setNom($array['role_nom'] ?? '');
+        $user->setPassword($array['password'] ?? '');
         return $user;
     }
 

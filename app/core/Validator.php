@@ -34,13 +34,13 @@ class Validator
             if ($rule === 'senegal_phone' && !preg_match('/^(77|78|76|70|75)[0-9]{7}$/', $value)) {
                 self::addError($field, 'Numéro de téléphone invalide.');
             }
-            return;
+            // return;
         }
     }
 
     public static function addError(string $field, string $message): void
     {
-        self::$errors[$field][] = $message;
+        self::$errors[$field] = $message;
     }
 
     public static function isValid(): bool

@@ -17,7 +17,9 @@ $routes = [
     ],
     '/login' => [
         'controller' => SecurityController::class,
-        'action' => 'login'
+        'action' => 'login',
+        // 'middlewares' => ['cryptPassword'],
+
     ],
     '/logout' => [
         'controller' => SecurityController::class,

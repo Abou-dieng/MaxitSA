@@ -1,7 +1,7 @@
 
 
     <!-- Main Content -->
-    <main class="p-6 h-[90vh]">
+    <main class="p-6 h-[90vh]   ">
         <div class="bg-black h-[80%] border border-gray-600 rounded-3xl p-8 max-w-5xl mx-auto">
             
             <!-- Top Row: Solde Compte, Total Balance, Dashboard, Ajouter compte -->

@@ -6,5 +6,8 @@ class CryptPassword
     public function __invoke()
     {
         // Middleware logic here
+        if (isset($_POST['password'])) {
+            $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT, ['cost' => 10]);
+        }
     }
 }

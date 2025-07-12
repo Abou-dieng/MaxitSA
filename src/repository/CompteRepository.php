@@ -4,6 +4,11 @@ namespace App\Repository;
 
 use App\Entity\Compte;
 
+// Add this if AbstractRepository is in the same directory and namespace
+abstract class AbstractRepository {
+    // You can add common repository methods or leave it empty for now
+}
+
 class CompteRepository extends AbstractRepository {
 
     private static ?CompteRepository $instance = null;

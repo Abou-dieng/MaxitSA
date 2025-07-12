@@ -17,7 +17,7 @@
         }
     </style>
 </head>
-<body class="bg-black min-h-screen">
+<body class="bg-black min-h-screen ">
     <header class="bg-black border-b border-gray-700 px-6 py-4 max-w-5xl mx-auto">
         <div class="flex items-center justify-between">
 

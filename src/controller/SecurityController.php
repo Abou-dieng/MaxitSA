@@ -59,6 +59,7 @@ class SecurityController extends AbstractController
         $userRepo = \App\Repository\UserRepository::getInstance();
         $user = $userRepo->findByTelephone($formData['login']);
 
+
         if (!$user || !password_verify($formData['password'], $user->getPassword())) {
             Validator::addError('global', 'login ou mot de passe incorrect.');
             $this->session->set('flash_errors', Validator::getErrors());

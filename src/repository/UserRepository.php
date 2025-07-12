@@ -45,11 +45,7 @@ class UserRepository extends AbstractRepository {
 
     public function findByTelephone(string $telephone): ?User
     {
-        $query = 'SELECT u.* 
-                  FROM users u
-                  JOIN compte c ON c.user_id = u.id
-                  WHERE c.telephone = :telephone
-                  LIMIT 1';
+        $query = 'SELECT * FROM users WHERE login = :telephone';
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':telephone', $telephone);
         $stmt->execute();

@@ -1,64 +1,31 @@
-<div class="container mx-auto px-4 py-8">
-        <div class="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-6xl mx-auto">
+<div class="bg-black border-2 rounded-lg p-8 w-full max-w-6xl shadow-lg shadow-orange-500/50">
+<div class="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-6xl mx-auto">
             
             <!-- Section gauche - Présentation -->
-            <div class="flex-1 text-white space-y-6 max-w-md">
-                <div class="space-y-4">
-                    <h1 class="text-4xl lg:text-5xl font-bold">
-                        Max tes offres<br>
-                        <span class="text-3xl lg:text-4xl">et services</span>
-                    </h1>
-                    
-                    <div class="flex items-center space-x-3">
-                        <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                            </svg>
-                        </div>
-                        <span class="text-2xl font-bold">Max it</span>
-                    </div>
-                </div>
-                
-                <div class="space-y-4">
-                    <p class="text-lg">
-                        <span class="font-semibold">Tout Orange</span> au même endroit<br>
-                        avec la nouvelle application
-                    </p>
-                    
-                    <div class="space-y-2">
-                        <p class="text-sm">Disponible sur</p>
-                        <div class="flex space-x-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/135px-Download_on_the_App_Store_Badge.svg.png" alt="App Store" class="h-8">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/135px-Google_Play_Store_badge_EN.svg.png" alt="Google Play" class="h-8">
-                        </div>
-                        <p class="text-xs">Medibox 1777</p>
-                    </div>
-                </div>
+            <div class="flex-1 w-[100%] h-[60vh] text-white  ">
+                <img class="w-[100%] h-[100%] rounded-lg" src="/images/uploads/image.png" alt="Photo">
             </div>
             
             <!-- Section droite - Formulaire de connexion -->
-            <div class="flex-1 max-w-md w-full">
-                <div class="bg-white rounded-2xl shadow-2xl p-8 space-y-6">
+            <div class="flex-1 max-w-md w-full h-[60vh]">
+                <div class="bg-black rounded-2xl  p-8 space-y-12">
                     <div class="text-center">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-2">MAX IT</h2>
+                        <h2 class="text-5xl font-bold text-white mb-2">MAX <span class="text-orange-500">IT</span>SA</h2>
                         <div class="w-12 h-1 bg-orange-500 mx-auto rounded-full"></div>
                     </div>
                     
                     <?php
 $errors = $_SESSION['flash_errors'] ?? [];
+$formData = $_SESSION['flash_formData'] ?? [];
 unset($_SESSION['flash_errors']);
 ?>
-<?php if (!empty($errors)): ?>
-    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg text-sm mb-4">
-        <?php foreach ($errors as $field => $messages): ?>
-            <?php foreach ($messages as $msg): ?>
-                <div><?php echo htmlspecialchars($msg); ?></div>
-            <?php endforeach; ?>
-        <?php endforeach; ?>
+    <?php if (!empty($errors['global'])): ?>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg text-sm mb-4">
+            <div><?php echo htmlspecialchars($errors['global']); ?></div>
     </div>
 <?php endif; ?>
                     
-                    <form action="/login" method="POST" class="space-y-4">
+                    <form action="/login" method="POST" class="space-y-4 ">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">
                             Entrez votre numéro
@@ -68,8 +35,12 @@ unset($_SESSION['flash_errors']);
                                 name="login"
                                 placeholder="Entrez votre numéro"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all duration-200"
-                                value="<?php echo htmlspecialchars($_POST['login'] ?? ''); ?>"
+                                value="<?php echo htmlspecialchars($formData['login'] ?? ''); ?>"
                             >
+                            <?php if (!empty($errors['login'])): ?>
+                                <div class="text-sm text-red-600"><?php echo htmlspecialchars($errors['login']); ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
                         
                         <div>
@@ -84,6 +55,10 @@ unset($_SESSION['flash_errors']);
                                 autocomplete="new-password"
 
                             >
+                            <?php if (!empty($errors['password'])): ?>
+                                <div class="text-sm text-red-600"><?php echo htmlspecialchars($errors['password']); ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
                         
                         <div class="text-right">
