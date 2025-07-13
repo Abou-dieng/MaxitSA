@@ -1,5 +1,4 @@
-
-    <div class="bg-black border-2 border-gray-700 rounded-lg p-8 w-full max-w-6xl shadow-lg shadow-orange-500/50">
+<div class="bg-black border-2 border-gray-700 rounded-lg p-8 w-full max-w-6xl shadow-lg shadow-orange-500/50">
         <!-- Header -->
         <div class="text-center mb-8">
             <h1 class="text-3xl font-bold text-white">
@@ -8,7 +7,7 @@
         </div>
 
         <!-- Form -->
-        <form class="space-y-6 text-white" action="/register" method="post">
+        <form class="space-y-6 text-white" action="/register" method="post" enctype="multipart/form-data">
             <!-- Row 1: Nom complet et Adresse -->
             <div class="grid grid-cols-2 gap-4">
                 <div>
@@ -17,6 +16,7 @@
                     </label>
                     <input 
                         type="text" 
+                        name="nom"
                         placeholder="Votre nom complet"
                         class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     />
@@ -27,6 +27,7 @@
                     </label>
                     <input 
                         type="text" 
+                        name="prenom"
                         placeholder="Votre prénom"
                         class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     />
@@ -41,6 +42,7 @@
                     </label>
                     <input 
                         type="text" 
+                        name="adresse"
                         placeholder="Votre adresse"
                         class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     />
@@ -51,6 +53,7 @@
                     </label>
                     <input 
                         type="tel" 
+                        name="login"
                         placeholder="+221 XXX XX XX"
                         class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     />
@@ -65,6 +68,7 @@
                     </label>
                     <input 
                         type="text" 
+                        name="numero_carte_identite"
                         placeholder="1234567890987654"
                         class="w-[100%] px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     />
@@ -74,8 +78,9 @@
                         password <span class="text-red-500">*</span>
                     </label>
                     <input 
-                        type="tel" 
-                        placeholder="+221 XXX XX XX"
+                        type="password" 
+                        name="password"
+                        placeholder="Mot de passe"
                         class="w-[100%] px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     />
                 </div>
@@ -94,7 +99,7 @@
                         </svg>
                         <span class="text-xs text-gray-600 text-center">Cliquez pour uploader recto</span>
                     </div>
-                    <input type="file" class="hidden" accept="image/*" />
+                    <input type="file" name="photo_recto" class="hidden" accept="image/*" />
                 </div>
                 <div>
                     <label class="block text-white text-sm font-medium mb-2">
@@ -107,7 +112,7 @@
                         </svg>
                         <span class="text-xs text-gray-600 text-center">Cliquez pour uploader verso</span>
                     </div>
-                    <input type="file" class="hidden" accept="image/*" />
+                    <input type="file" name="photo_verso" class="hidden" accept="image/*" />
                 </div>
             </div>
 
@@ -121,4 +126,13 @@
                 </button>
             </div>
         </form>
+        <script>
+document.querySelectorAll('.upload-zone').forEach(function(zone, idx) {
+    zone.addEventListener('click', function() {
+        // Sélectionne le bon input file dans la même colonne
+        let input = zone.parentElement.querySelector('input[type="file"]');
+        if (input) input.click();
+    });
+});
+</script>
     </div>

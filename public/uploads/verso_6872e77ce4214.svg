@@ -1,0 +1,245 @@
+<svg viewBox="0 0 2880 1920" xmlns="http://www.w3.org/2000/svg">
+  <!-- PAGE 1: LOGIN -->
+  <g id="Page-1-Login" transform="translate(0, 0)">
+    <!-- Background -->
+    <rect width="720" height="480" fill="url(#orangeGradient)"/>
+    
+    <!-- Hero Section -->
+    <g id="Hero-Section" transform="translate(40, 40)">
+      <!-- Hero Background -->
+      <rect width="360" height="280" rx="12" fill="url(#heroGradient)"/>
+      <!-- Person placeholder -->
+      <rect x="20" y="140" width="120" height="140" rx="8" fill="#333"/>
+      <text x="80" y="220" text-anchor="middle" fill="white" font-size="12">Person</text>
+      <!-- Laptop placeholder -->
+      <rect x="260" y="40" width="80" height="50" rx="4" fill="#666" transform="rotate(-15 300 65)"/>
+    </g>
+    
+    <!-- Login Form -->
+    <g id="Login-Form" transform="translate(440, 40)">
+      <!-- Form Background -->
+      <rect width="240" height="360" rx="12" fill="rgba(255,255,255,0.95)"/>
+      
+      <!-- Logo -->
+      <text x="120" y="50" text-anchor="middle" fill="#ff6b35" font-size="24" font-weight="bold">MAX IT</text>
+      
+      <!-- Username Field -->
+      <g id="Username-Field" transform="translate(20, 80)">
+        <text x="0" y="0" fill="#333" font-size="14">Entrer votre nom d'utilisateur</text>
+        <rect y="10" width="200" height="40" rx="8" fill="rgba(255,255,255,0.8)"/>
+        <text x="10" y="32" fill="#999" font-size="12">Nom d'utilisateur</text>
+      </g>
+      
+      <!-- Password Field -->
+      <g id="Password-Field" transform="translate(20, 160)">
+        <text x="0" y="0" fill="#333" font-size="14">Entrer votre nom d'utilisateur</text>
+        <rect y="10" width="200" height="40" rx="8" fill="rgba(255,255,255,0.8)"/>
+        <text x="10" y="32" fill="#999" font-size="12">Mot de passe</text>
+        <text x="200" y="65" text-anchor="end" fill="#666" font-size="12">mot de passe oublié?</text>
+      </g>
+      
+      <!-- Login Button -->
+      <rect x="20" y="260" width="200" height="40" rx="8" fill="#333"/>
+      <text x="120" y="282" text-anchor="middle" fill="white" font-size="14">Se connecter</text>
+      
+      <!-- Register Button -->
+      <rect x="20" y="310" width="200" height="40" rx="8" fill="rgba(255,255,255,0.3)"/>
+      <text x="120" y="332" text-anchor="middle" fill="#333" font-size="14">S'inscrire</text>
+    </g>
+  </g>
+  
+  <!-- PAGE 2: DASHBOARD -->
+  <g id="Page-2-Dashboard" transform="translate(720, 0)">
+    <!-- Background -->
+    <rect width="720" height="480" fill="#1a1a1a"/>
+    
+    <!-- Header -->
+    <g id="Header" transform="translate(0, 0)">
+      <rect width="720" height="60" fill="#2a2a2a"/>
+      <!-- Logo -->
+      <text x="24" y="38" fill="#ff6b35" font-size="16" font-weight="bold">MAX IT</text>
+      <!-- Navigation -->
+      <text x="120" y="38" fill="#ff6b35" font-size="14">Dashboard</text>
+      <text x="200" y="38" fill="#ccc" font-size="14">Créer account</text>
+      <text x="300" y="38" fill="#ccc" font-size="14">Access account</text>
+      <!-- Help Button -->
+      <rect x="420" y="22" width="50" height="24" rx="4" fill="#ff6b35"/>
+      <text x="445" y="36" text-anchor="middle" fill="white" font-size="12">Help</text>
+      <!-- User Info -->
+      <text x="600" y="38" fill="white" font-size="14">Fatma</text>
+      <circle cx="640" cy="30" r="16" fill="#ff6b35"/>
+      <text x="680" y="38" fill="white" font-size="12">775626565</text>
+    </g>
+    
+    <!-- Balance Card -->
+    <g id="Balance-Card" transform="translate(24, 84)">
+      <rect width="672" height="80" rx="12" fill="url(#orangeGradient)"/>
+      <!-- Balance Info -->
+      <rect x="20" y="16" width="80" height="20" rx="4" fill="#ff6b35"/>
+      <text x="25" y="28" fill="white" font-size="12">Solde compte</text>
+      <text x="20" y="52" fill="white" font-size="14">Total Balance</text>
+      <text x="20" y="70" fill="white" font-size="20" font-weight="bold">$12,345.67</text>
+      <!-- Account Count -->
+      <rect x="520" y="16" width="132" height="48" rx="8" fill="#333"/>
+      <text x="586" y="32" text-anchor="middle" fill="white" font-size="12">Number of account</text>
+      <text x="586" y="52" text-anchor="middle" fill="white" font-size="18" font-weight="bold">3</text>
+    </g>
+    
+    <!-- Transactions Section -->
+    <g id="Transactions-Section" transform="translate(24, 184)">
+      <rect width="672" height="272" rx="12" fill="#2a2a2a"/>
+      <!-- Section Header -->
+      <rect x="20" y="16" width="100" height="24" rx="4" fill="#ff6b35"/>
+      <text x="25" y="30" fill="white" font-size="12">Voir transactions</text>
+      <rect x="580" y="16" width="72" height="24" rx="4" fill="#ff6b35"/>
+      <text x="600" y="30" fill="white" font-size="12">Voir Plus</text>
+      
+      <!-- Transaction Items -->
+      <g id="Transaction-Items" transform="translate(20, 60)">
+        <!-- Transaction 1 -->
+        <rect x="0" y="0" width="32" height="32" rx="4" fill="#444"/>
+        <text x="48" y="16" fill="white" font-size="12">Everyday Account</text>
+        <text x="48" y="28" fill="#888" font-size="10">Checking acct 1234</text>
+        <text x="580" y="20" text-anchor="end" fill="white" font-size="12">$5,678.90</text>
+        
+        <!-- Transaction 2 -->
+        <rect x="0" y="50" width="32" height="32" rx="4" fill="#444"/>
+        <text x="48" y="66" fill="white" font-size="12">Everyday Account</text>
+        <text x="48" y="78" fill="#888" font-size="10">Checking acct 1234</text>
+        <text x="580" y="70" text-anchor="end" fill="white" font-size="12">$5,678.90</text>
+        
+        <!-- Transaction 3 -->
+        <rect x="0" y="100" width="32" height="32" rx="4" fill="#444"/>
+        <text x="48" y="116" fill="white" font-size="12">Everyday Account</text>
+        <text x="48" y="128" fill="#888" font-size="10">Checking acct 1234</text>
+        <text x="580" y="120" text-anchor="end" fill="white" font-size="12">$5,678.90</text>
+        
+        <!-- Transaction 4 -->
+        <rect x="0" y="150" width="32" height="32" rx="4" fill="#444"/>
+        <text x="48" y="166" fill="white" font-size="12">Everyday Account</text>
+        <text x="48" y="178" fill="#888" font-size="10">Checking acct 1234</text>
+        <text x="580" y="170" text-anchor="end" fill="white" font-size="12">$5,678.90</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- PAGE 3: TRANSACTIONS LIST -->
+  <g id="Page-3-Transactions" transform="translate(1440, 0)">
+    <!-- Background -->
+    <rect width="720" height="480" fill="#1a1a1a"/>
+    
+    <!-- Header (same as dashboard) -->
+    <g id="Header" transform="translate(0, 0)">
+      <rect width="720" height="60" fill="#2a2a2a"/>
+      <text x="24" y="38" fill="#ff6b35" font-size="16" font-weight="bold">MAX IT</text>
+      <text x="120" y="38" fill="#ccc" font-size="14">Dashboard</text>
+      <text x="200" y="38" fill="#ccc" font-size="14">Créer account</text>
+      <text x="300" y="38" fill="#ccc" font-size="14">Access account</text>
+      <rect x="420" y="22" width="50" height="24" rx="4" fill="#ff6b35"/>
+      <text x="445" y="36" text-anchor="middle" fill="white" font-size="12">Help</text>
+      <text x="600" y="38" fill="white" font-size="14">Fatma</text>
+      <circle cx="640" cy="30" r="16" fill="#ff6b35"/>
+      <text x="680" y="38" fill="white" font-size="12">775626565</text>
+    </g>
+    
+    <!-- Transactions List -->
+    <g id="Transactions-List" transform="translate(24, 84)">
+      <rect width="672" height="372" rx="12" fill="#2a2a2a"/>
+      <!-- List Header -->
+      <rect x="20" y="16" width="100" height="24" rx="4" fill="#ff6b35"/>
+      <text x="25" y="30" fill="white" font-size="12">Liste transaction</text>
+      <rect x="580" y="16" width="72" height="24" rx="4" fill="white"/>
+      <text x="600" y="30" fill="#333" font-size="12">Filtrer</text>
+      
+      <!-- Transaction List Items -->
+      <g id="List-Items" transform="translate(20, 60)">
+        <!-- Item 1 -->
+        <rect x="0" y="0" width="32" height="32" rx="4" fill="#444"/>
+        <text x="48" y="16" fill="white" font-size="12">Everyday Account</text>
+        <text x="48" y="28" fill="#888" font-size="10">Checking acct 1234</text>
+        <text x="580" y="20" text-anchor="end" fill="white" font-size="12">$5,678.90</text>
+        
+        <!-- Item 2 -->
+        <rect x="0" y="50" width="32" height="32" rx="4" fill="#444"/>
+        <text x="48" y="66" fill="white" font-size="12">Everyday Account</text>
+        <text x="48" y="78" fill="#888" font-size="10">Checking acct 1234</text>
+        <text x="580" y="70" text-anchor="end" fill="white" font-size="12">$5,678.90</text>
+        
+        <!-- Item 3 -->
+        <rect x="0" y="100" width="32" height="32" rx="4" fill="#444"/>
+        <text x="48" y="116" fill="white" font-size="12">Everyday Account</text>
+        <text x="48" y="128" fill="#888" font-size="10">Checking acct 1234</text>
+        <text x="580" y="120" text-anchor="end" fill="white" font-size="12">$5,678.90</text>
+        
+        <!-- Item 4 -->
+        <rect x="0" y="150" width="32" height="32" rx="4" fill="#444"/>
+        <text x="48" y="166" fill="white" font-size="12">Everyday Account</text>
+        <text x="48" y="178" fill="#888" font-size="10">Checking acct 1234</text>
+        <text x="580" y="170" text-anchor="end" fill="white" font-size="12">$5,678.90</text>
+        
+        <!-- Item 5 -->
+        <rect x="0" y="200" width="32" height="32" rx="4" fill="#444"/>
+        <text x="48" y="216" fill="white" font-size="12">Everyday Account</text>
+        <text x="48" y="228" fill="#888" font-size="10">Checking acct 1234</text>
+        <text x="580" y="220" text-anchor="end" fill="white" font-size="12">$5,678.90</text>
+        
+        <!-- Item 6 -->
+        <rect x="0" y="250" width="32" height="32" rx="4" fill="#444"/>
+        <text x="48" y="266" fill="white" font-size="12">Everyday Account</text>
+        <text x="48" y="278" fill="#888" font-size="10">Checking acct 1234</text>
+        <text x="580" y="270" text-anchor="end" fill="white" font-size="12">$5,678.90</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- PAGE 4: ADD TRANSACTION -->
+  <g id="Page-4-Add-Transaction" transform="translate(2160, 0)">
+    <!-- Background -->
+    <rect width="720" height="480" fill="#1a1a1a"/>
+    
+    <!-- Header -->
+    <g id="Header" transform="translate(0, 0)">
+      <rect width="720" height="60" fill="#2a2a2a"/>
+      <text x="24" y="38" fill="#ff6b35" font-size="16" font-weight="bold">MAX IT</text>
+      <text x="120" y="38" fill="#ccc" font-size="14">Dashboard</text>
+      <text x="200" y="38" fill="#ccc" font-size="14">Créer account</text>
+      <text x="300" y="38" fill="#ccc" font-size="14">Access account</text>
+      <rect x="420" y="22" width="50" height="24" rx="4" fill="#ff6b35"/>
+      <text x="445" y="36" text-anchor="middle" fill="white" font-size="12">Help</text>
+      <text x="600" y="38" fill="white" font-size="14">Fatma</text>
+      <circle cx="640" cy="30" r="16" fill="#ff6b35"/>
+      <text x="680" y="38" fill="white" font-size="12">775626565</text>
+    </g>
+    
+    <!-- Add Transaction Form -->
+    <g id="Add-Transaction-Form" transform="translate(160, 120)">
+      <!-- Phone Number Field -->
+      <text x="0" y="0" fill="white" font-size="16">Entrer votre numero de telephone</text>
+      <text x="310" y="0" fill="#ff6b35" font-size="16">(*)</text>
+      <rect x="0" y="10" width="400" height="48" rx="8" fill="#333"/>
+      <text x="16" y="38" fill="#888" font-size="14">Entrer le numero...</text>
+      
+      <!-- Amount Field -->
+      <text x="0" y="100" fill="white" font-size="16">Mettre un solde</text>
+      <rect x="0" y="110" width="400" height="48" rx="8" fill="#333"/>
+      <text x="16" y="138" fill="#888" font-size="14">Entrer le solde</text>
+      
+      <!-- Submit Button -->
+      <rect x="0" y="200" width="400" height="48" rx="8" fill="#ff6b35"/>
+      <text x="200" y="228" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Enregistrer</text>
+    </g>
+  </g>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8c42;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

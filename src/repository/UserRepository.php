@@ -7,6 +7,7 @@ use App\Core\Abstract\AbstractRepository;
 use App\Entity\User;
 use PDO;
 
+
 class UserRepository extends AbstractRepository {
 
     private static ?UserRepository $instance = null;
@@ -24,7 +25,6 @@ class UserRepository extends AbstractRepository {
     }
 
     public function selectAll() {}
-    public function insert() {}
     public function update() {}
     public function delete() {}
     public function selectById() {}
@@ -53,5 +53,20 @@ class UserRepository extends AbstractRepository {
         return $row ? \App\Entity\User::toObject($row) : null;
     }
 
-
+    public function insert(array $data): void
+    {
+        $query = "INSERT INTO users (nom, prenom, adresse, login, password, numerocarteidentite, photoidentiteverso, photoidentiterecto, typeuser_id) 
+                  VALUES (:nom, :prenom, :adresse, :login, :password, :numerocarteidentite, :photoidentiteverso, :photoidentiterecto, :typeuser_id)";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindParam(':nom', $data['nom']);
+        $stmt->bindParam(':prenom', $data['prenom']);
+        $stmt->bindParam(':adresse', $data['adresse']);
+        $stmt->bindParam(':login', $data['login']);
+        $stmt->bindParam(':password', $data['password']);
+        $stmt->bindParam(':numerocarteidentite', $data['numero_carte_identite']);
+        $stmt->bindParam(':photoidentiteverso', $data['photo_verso']);
+        $stmt->bindParam(':photoidentiterecto', $data['photo_recto']);
+        $stmt->bindParam(':typeuser_id', $data['typeuser_id']);
+        $stmt->execute();
+    }
 }

@@ -21,6 +21,7 @@
         }
     ],
     "require": {
-        "vlucas/phpdotenv": "*"
+        "vlucas/phpdotenv": "*",
+        "twilio/sdk": "^8.6"
     }
 }

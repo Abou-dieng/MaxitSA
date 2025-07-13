@@ -42,5 +42,9 @@ $routes = [
         'controller' => ClientController::class,
         // 'middlewares' => ['auth', 'isClient'],
         'action' => 'listTransactons'
+    ],
+    '/register' => [
+        'controller' => SecurityController::class,
+        'action' => 'register'
     ]
 ];

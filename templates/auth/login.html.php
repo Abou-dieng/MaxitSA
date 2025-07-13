@@ -15,15 +15,21 @@
                     </div>
                     
                     <?php
-$errors = $_SESSION['flash_errors'] ?? [];
-$formData = $_SESSION['flash_formData'] ?? [];
-unset($_SESSION['flash_errors']);
-?>
-    <?php if (!empty($errors['global'])): ?>
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg text-sm mb-4">
-            <div><?php echo htmlspecialchars($errors['global']); ?></div>
-    </div>
-<?php endif; ?>
+                    $formData = $_SESSION['flash_formData'] ?? [];
+                    $errors = $_SESSION['flash_errors'] ?? [];
+                    unset($_SESSION['flash_errors']);
+                    ?>
+            <?php if (!empty($errors['global'])): ?>
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg text-sm mb-4">
+                <div><?php echo htmlspecialchars($errors['global']); ?></div>
+                </div>
+            <?php endif; ?>
+                    
+            <?php if (!empty($_SESSION['flash_success'])): ?>
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg text-sm mb-4">
+                    <?php echo htmlspecialchars($_SESSION['flash_success']); unset($_SESSION['flash_success']); ?>
+                    </div>
+            <?php endif; ?>
                     
                     <form action="/login" method="POST" class="space-y-4 ">
                         <div>

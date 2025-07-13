@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Core\Abstract\AbstractController;
 use App\Core\Validator;
 use App\Service\SecurityService;
+use App\Service\TwilioService;
+use App\Entity\MessageEnum;
 
 class SecurityController extends AbstractController
 {
@@ -79,6 +81,79 @@ class SecurityController extends AbstractController
         $this->session->destroy();
         header('Location: /');
     }
+
+    public function register()
+    {
+        $formData = [
+            'nom' => trim($_POST['nom'] ?? ''),
+            'prenom' => trim($_POST['prenom'] ?? ''),
+            'adresse' => trim($_POST['adresse'] ?? ''),
+            'login' => trim($_POST['login'] ?? ''),
+            'password' => trim($_POST['password'] ?? ''),
+            'numero_carte_identite' => trim($_POST['numero_carte_identite'] ?? ''),
+            // Ajoute les autres champs si besoin
+        ];
+
+        // Validation
+        Validator::valide($formData['nom'], 'nom', ['required']);
+        Validator::valide($formData['prenom'], 'prenom', ['required']);
+        Validator::valide($formData['adresse'], 'adresse', ['required']);
+        Validator::valide($formData['login'], 'login', ['required', 'senegal_phone']);
+        Validator::valide($formData['password'], 'password', ['required', 'min:6']);
+        Validator::valide($formData['numero_carte_identite'], 'numero_carte_identite', ['required']);
+
+        // Vérifie unicité login (numéro) et CNI
+        $userRepo = \App\Repository\UserRepository::getInstance();
+        if ($userRepo->findByTelephone($formData['login'])) {
+            Validator::addError('login', 'Ce numéro existe déjà.');
+        }
+        // Ajoute une méthode findByCni si besoin
+
+        if (!Validator::isValid()) {
+            $this->session->set('flash_errors', Validator::getErrors());
+            $this->session->set('flash_formData', $formData);
+            header('Location: /account/create');
+            exit;
+        }
+
+        // Hash du mot de passe
+        $formData['password'] = password_hash($formData['password'], PASSWORD_DEFAULT);
+
+        $photoRecto = '';
+        $photoVerso = '';
+        $uploadDir = __DIR__ . '/../../public/uploads/';
+
+        if (isset($_FILES['photo_recto']) && $_FILES['photo_recto']['error'] === UPLOAD_ERR_OK) {
+            $ext = pathinfo($_FILES['photo_recto']['name'], PATHINFO_EXTENSION);
+            $photoRecto = uniqid('recto_') . '.' . $ext;
+            move_uploaded_file($_FILES['photo_recto']['tmp_name'], $uploadDir . $photoRecto);
+        }
+
+        if (isset($_FILES['photo_verso']) && $_FILES['photo_verso']['error'] === UPLOAD_ERR_OK) {
+            $ext = pathinfo($_FILES['photo_verso']['name'], PATHINFO_EXTENSION);
+            $photoVerso = uniqid('verso_') . '.' . $ext;
+            move_uploaded_file($_FILES['photo_verso']['tmp_name'], $uploadDir . $photoVerso);
+        }
+
+        $formData['photo_recto'] = $photoRecto;
+        $formData['photo_verso'] = $photoVerso;
+        $formData['typeuser_id'] = 1; // ou 2 selon le type (1 = client, 2 = autre)
+
+        // Insertion en base
+        $userRepo->insert($formData);
+
+        $twilio = new TwilioService();
+        $twilio->sendSms(
+            $formData['login'], // numéro de téléphone
+            MessageEnum::INSCRIPTION->value
+        );
+
+        // Redirection ou message de succès
+        $this->session->set('flash_success', 'Compte créé avec succès. Connectez-vous.');
+        header('Location: /');
+        exit;
+    }
 }
+
 
 

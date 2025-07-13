@@ -12,7 +12,7 @@ abstract class AbstractRepository
      protected PDO $pdo;
 
     abstract public function selectAll();
-    abstract public function insert();
+    abstract public function insert(array $data);
     abstract public function update();
     abstract public function delete();
     abstract public function selectById();
